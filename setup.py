@@ -24,16 +24,6 @@ class PyTest(TestCommand):
         errno = pytest.main(self.test_args)
         sys.exit(errno)
 
-
-def readme():
-    try:
-        os.system('pandoc --from=markdown --to=rst README.md -o README.rst')
-        with open('README.rst') as f:
-            return f.read()
-    except:
-        return '''PickleDB use pickle file as database similiar as DBM to save state of complex objects'''
-
-
 setup(name='pickle_db',
       url='https://github.com/valdergallo/pickle_db',
       download_url='https://github.com/valdergallo/pickle_db/tarball/%s/' % pickle_db.get_version(),
@@ -42,9 +32,7 @@ setup(name='pickle_db',
       keywords=['constants', 'dbm', 'data', 'control', 'database', 'pickle', 'filemanager', 'singleton', 'pyQT', 'simpleGUI', 'tinker', 'kivy'],
       description='PickleDB use pickle file as database similiar as DBM to save state of complex objects',
       license='GPL-3.0',
-      long_description=readme(),
       classifiers=[
-          'Framework :: Django',
           'Operating System :: OS Independent',
           'Topic :: Utilities',
           'Programming Language :: Python',
