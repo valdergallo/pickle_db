@@ -26,11 +26,25 @@ def test_load_pickle_db():
     delete_cache()
 
 
-def test_pickle_content():
+def test_pickle_save_content():
     db = PickleDB(CACHE_FILE)
+    db.clean_cache()
     db.name = NAME
     size_without_name = db.sizeof()
     db.city = CITY
     size_with_name = db.sizeof()
+
+    assert size_without_name != size_with_name
+
+
+def test_pickle_delete_content():
+    db = PickleDB(CACHE_FILE)
+    db.clean_cache()
+
+    db.name = NAME
+    db.city = CITY
+    size_with_name = db.sizeof()
+    del db.name
+    size_without_name = db.sizeof()
 
     assert size_without_name != size_with_name
