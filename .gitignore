@@ -65,3 +65,4 @@ target/
 
 # ignore pipfile
 Pipfile.lock
+*.lock
