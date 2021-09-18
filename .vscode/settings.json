@@ -1,0 +1,21 @@
+{
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.lintOnSave": true,
+    "python.sortImports.args": [
+        "--settings-path=${workspaceFolder}/setup.cfg",
+        "-q"
+    ],
+    "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
+    "python.formatting.provider": "black",
+    "editor.rulers": [99],
+    "editor.formatOnSave": false,
+    "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "files.watcherExclude": {
+        "**/.venv/**": true
+    }
+}
