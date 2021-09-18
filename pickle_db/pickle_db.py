@@ -61,3 +61,8 @@ class PickleDB(object):
         self.__context = {}
         self.__cache.save(self.__context)
 
+    def sizeof(self):
+        if os.path.exists(self.__cache.file_name):
+            return os.path.getsize(self.__cache.file_name)
+        return 0
+
