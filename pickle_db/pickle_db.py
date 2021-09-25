@@ -50,6 +50,9 @@ class PickleDB(object):
             self.__cache.save(self.__context)
         super(PickleDB, self).__setattr__(name, value)
 
+    def __getattr__(self, name):
+        return self.__dict__.get(name)
+
     def __delattr__(self, name):
         debug_print("Delete: ", name)
         if "__" not in name:
